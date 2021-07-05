@@ -21,12 +21,12 @@ function getTripItem(tripItemArray){
     let chosenTripItem = tripItemArray[Math.floor(Math.random() * tripItemArray.length)];
 
     // ask if user likes trip item generated
-    let tripItemChoice = prompt("Would you like to go to " + chosenTripItem + "?", "yes or no");
+    let tripItemChoice = prompt("Is this trip idea okay?  " + chosenTripItem, "yes or no");
 
     // if user doesn't like trip item, rerun selection until user does
     while (tripItemChoice !== "yes"){
         chosenTripItem = tripItemArray[Math.floor(Math.random() * tripItemArray.length)];
-        tripItemChoice = prompt("Would you like this mode of transportation: " + chosenTripItem + "?", "yes or no");
+        tripItemChoice = prompt("Is this trip idea okay?  " + chosenTripItem, "yes or no");
     }
 
     // send selection back to where called
@@ -53,7 +53,7 @@ function userConfirmationPrompt(){
         return userConfirmation;
 }
 
-// verify user confirmation
+// verify user confirmation to determine if trip items need to be regenerated or not
 let userFinalAnswer = verifyUserConfirmation(tripDetailConfirmation)
 
 // confirm if user likes trip details they selected
@@ -93,8 +93,9 @@ function verifyUserConfirmation(userConfirmation){
     }
 }
 
-// display user trip details
+// display user trip details to console
 let displayUserTripDetails = displayTripDetails(randomDestination, randomRestaurant, randomTransportMode, randomEntertainment);
+
 
 function displayTripDetails(tripDestination, tripRestaurant, tripTransportation, tripEntertainment){
     // display user confirmed trip details one last time
