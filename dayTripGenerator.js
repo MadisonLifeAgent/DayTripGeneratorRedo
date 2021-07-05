@@ -93,14 +93,18 @@ function verifyUserConfirmation(userConfirmation){
     }
 }
 
+// display user trip details
+let displayUserTripDetails = displayTripDetails(randomDestination, randomRestaurant, randomTransportMode, randomEntertainment);
 
+function displayTripDetails(tripDestination, tripRestaurant, tripTransportation, tripEntertainment){
     // display user confirmed trip details one last time
     console.log("Trip Details" +
                 "\n\n" +
-                "Destination: " + randomDestination +
+                "Destination: " + tripDestination +
                 "\n" +
-                "Transportation Mode: " + randomTransportMode +
+                "Restaurant: " + tripRestaurant +
                 "\n" +
-                "Restaurant: " + randomRestaurant +
+                "Transportation Mode: " + tripTransportation +
                 "\n" +
-                "Entertainment: " + randomEntertainment);
+                "Entertainment: " + tripEntertainment);
+}
